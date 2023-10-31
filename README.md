@@ -1,8 +1,15 @@
 # INC-SR-PRB-Dashboard
 Analysis dashboard which monitors tickets life cycle and helps business take smart decisions and improve efficiency.
 The pbix file size is very big, hence I ahve attached screenshots of Important Tabs like KPI, Hourly Analysis, Pareto Analysis, Caller ID Analysis.
+
+
+
 Some Important DAX CODES: 
+
+
 **Total Tkts Resolved in <1HR** = CALCULATE([Total Resolved tickets],'PPA EI_ISP Summary'[TTR] in {"<=1HR"})
+
+
 **SLA** = 
 if('PPA EI_ISP Summary'[Ticket type] = "INC" && 'PPA EI_ISP Summary'[priority] = "Major Incident -Priority 1" && 'PPA EI_ISP Summary'[SLA Time diff]>15 && 'PPA EI_ISP Summary'[SLA Time diff]<60, "Y:At Risk",
 if('PPA EI_ISP Summary'[Ticket type] = "INC" && 'PPA EI_ISP Summary'[priority] = "Major Incident -Priority 1" &&  'PPA EI_ISP Summary'[SLA Time diff]>60, "R:Breached",
